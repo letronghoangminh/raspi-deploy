@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/static/assets/global.css">
+        <link rel="stylesheet" href="/static/assets/style.css" />
+    </head>
+    <body class="flex flex-col items-center gap-8 w-screen h-min-screen">
+        <div class="ellipse-1"></div>
+        <div class="ellipse-2"></div>
+        <!-- <div id="loading" class="loading flex justify-center items-center w-screen h-screen">
+            <div class="rounded-4 p-6 rotate-delay">
+                <svg width="64" height="64" class="rotate" viewBox="0 0 1024 1024"><path fill="#ffffff" d="M512 1024c-69.1 0-136.2-13.5-199.3-40.2C251.7 958 197 921 150 874c-47-47-84-101.7-109.8-162.7C13.5 648.2 0 581.1 0 512c0-19.9 16.1-36 36-36s36 16.1 36 36c0 59.4 11.6 117 34.6 171.3c22.2 52.4 53.9 99.5 94.3 139.9c40.4 40.4 87.5 72.2 139.9 94.3C395 940.4 452.6 952 512 952c59.4 0 117-11.6 171.3-34.6c52.4-22.2 99.5-53.9 139.9-94.3c40.4-40.4 72.2-87.5 94.3-139.9C940.4 629 952 571.4 952 512c0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 0 0-94.3-139.9a437.71 437.71 0 0 0-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.2C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7c26.7 63.1 40.2 130.2 40.2 199.3s-13.5 136.2-40.2 199.3C958 772.3 921 827 874 874c-47 47-101.8 83.9-162.7 109.7c-63.1 26.8-130.2 40.3-199.3 40.3z"/></svg>
+            </div>
+        </div> -->
+        <div class="__header__ flex ml-auto">
+            <div class="rounded-bl-8 overflow-hidden px-16 pt-8">
+                <img src="/static/assets/image 6.png" alt="" class="object-cover">
+            </div>
+            <div class="px-16 flex items-center">
+                Medical Leaf Recognition
+            </div>
+        </div>
+        <div class="__main__ flex flex-col p-8 gap-4">
+            <div class="live-img gap-12">
+                <div class="live-img__title">
+                    <h3>Live streaming</h4>
+                </div>
+                <div class="live-img__img-container overflow-hidden rounded-4 aspect-video">
+                    <img class="w-full h-full object-cover" src="{{ url_for('video') }}" />
+                </div>
+            </div>
+            <div class="take-pic">
+                <form action="/take-pic">
+                    <input type="submit" value="Take picture" class="submit-btn" />
+                </form>
+            </div>
+        </div>
+        <script src="/static/assets/index.js"></script>
+    </body>
+</html>
