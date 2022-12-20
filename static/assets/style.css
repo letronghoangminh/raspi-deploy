@@ -141,13 +141,25 @@
         transform: rotate(360deg);
     }
 }
-.article-center{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 126px ;
+.article {
+    position: relative;
+    z-index: 666;
+    width: 80vw;
+    border: 4px solid black;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: all ease .2s;
 }
-.Search-Result{
-    font-size: 2.4rem;
-    color: red;
+.article .content {
+    font-size: 14px;
+    white-space: pre-wrap;
+}
+.article:hover {
+    transform: translate(5px, -5px);
+    background-color: white;
+    box-shadow: -5px 5px 0rem #318161;
+}
+
+.search-result{
+    color: #142E38;
 }
