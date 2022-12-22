@@ -53,7 +53,7 @@ def take_pic():
 
 @app.route('/predict')
 def predict():
-    yolov5 = YoloV5(weight_path = "weights/best.pt", image_path = "static/test.jpeg")
+    yolov5 = YoloV5(weight_path = "weights/best.onnx", image_path = "static/test.jpeg")
     final_results = yolov5.predict_labels()
     yolov5.inference()
     return render_template('inference.html', label=final_results[0][0], accuracy=(final_results[0][1] * 100), image='static/inference.jpeg')
