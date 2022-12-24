@@ -7,6 +7,7 @@ from modules import YoloV5
 
 app=Flask(__name__,  static_url_path='/static', static_folder='static')
 camera = None
+server = os.environ['SEARCH_SERVER']
 
 def generate_frames():
     global camera
@@ -60,12 +61,18 @@ def predict():
 
 @app.route('/search', methods=['POST'])
 def search():
-    server = request.form.get('server', 'server')
     label = request.form.get('label', 'label')
     res = requests.get(f'{server}/search/{label}')
     articles = res.json()
 
     return render_template('result.html', articles=articles)
+
+@app.route('/corpus/<index>', methods=['GET'])
+def detail(index):
+    res = requests.get(f'{server}/corpus/{index}')
+    article = res.json()
+
+    return render_template('detail.html', article=article)
 
 if __name__=="__main__":
     app.run(debug=True, port=2404, host='0.0.0.0')
