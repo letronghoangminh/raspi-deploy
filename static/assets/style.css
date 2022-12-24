@@ -178,6 +178,10 @@
 
 .article-detail {
     padding-inline: 10vw;
+    width: 100vw;
+    z-index: 100;
+    white-space: pre-wrap;
+    
 }
 
 .back-to-list {
